@@ -1,0 +1,342 @@
+{
+  "cards": [
+    {
+      "id": "fixture_cae6570e96dda42c",
+      "work_id": "work:yj:1586cd9a8b7a99652200",
+      "selected_variant_id": "fixture_cae6570e96dda42c",
+      "default_variant_id": "fixture_cae6570e96dda42c",
+      "season_count": 8,
+      "seasons": [
+        {
+          "variant_id": "fixture_4d17f2b7fb6d74ed",
+          "work_id": "work:yj:1586cd9a8b7a99652200",
+          "title": "西游记 第2季（粤语）",
+          "season_number": 2,
+          "season_label": "第2季",
+          "year": 1998,
+          "episode_count": 42,
+          "available_episode_count": 42,
+          "has_playback": true,
+          "playback_count": 252,
+          "heat_value": 40.08,
+          "updated_at": "2026-10-11T12:18:58.836Z"
+        },
+        {
+          "variant_id": "fixture_cae6570e96dda42c",
+          "work_id": "work:yj:1586cd9a8b7a99652200",
+          "title": "西游记",
+          "year": 1986,
+          "episode_count": 25,
+          "available_episode_count": 25,
+          "has_playback": true,
+          "playback_count": 125,
+          "heat_value": 93.05,
+          "updated_at": "2026-09-30T11:26:21.193Z",
+          "selected": true,
+          "default": true
+        },
+        {
+          "variant_id": "fixture_1bb36e3c69bfd95d",
+          "work_id": "work:yj:1586cd9a8b7a99652200",
+          "title": "西游记",
+          "year": 2010,
+          "available_episode_count": 60,
+          "has_playback": true,
+          "playback_count": 1458,
+          "heat_value": 70.31,
+          "updated_at": "2026-10-22T11:23:37.908Z"
+        },
+        {
+          "variant_id": "fixture_2602c3df1604403c",
+          "work_id": "work:yj:1586cd9a8b7a99652200",
+          "title": "西游记",
+          "year": 2006,
+          "episode_count": 11,
+          "available_episode_count": 11,
+          "has_playback": true,
+          "playback_count": 22,
+          "heat_value": 40.95,
+          "updated_at": "2026-07-26T08:14:55.636Z"
+        },
+        {
+          "variant_id": "fixture_76f4b485a2bc06cd",
+          "work_id": "work:yj:1586cd9a8b7a99652200",
+          "title": "西游记",
+          "year": 1999,
+          "episode_count": 52,
+          "available_episode_count": 52,
+          "has_playback": true,
+          "playback_count": 156,
+          "heat_value": 37.21,
+          "updated_at": "2026-10-15T21:22:22.211Z"
+        },
+        {
+          "variant_id": "fixture_5eefd1f44313234b",
+          "work_id": "work:yj:1586cd9a8b7a99652200",
+          "title": "西游记",
+          "year": 1966,
+          "available_episode_count": 60,
+          "has_playback": true,
+          "playback_count": 61,
+          "heat_value": 37.53,
+          "updated_at": "2026-07-16T03:31:56.458Z"
+        },
+        {
+          "variant_id": "fixture_f796b6b14666f6c2",
+          "work_id": "work:yj:1586cd9a8b7a99652200",
+          "title": "西游记",
+          "year": 1999,
+          "available_episode_count": 52,
+          "has_playback": true,
+          "playback_count": 104,
+          "heat_value": 32.11,
+          "updated_at": "2026-06-20T21:41:54.316Z"
+        },
+        {
+          "variant_id": "fixture_8c50b89100528b97",
+          "work_id": "work:yj:1586cd9a8b7a99652200",
+          "title": "西游记（粤语）",
+          "year": 1996,
+          "episode_count": 30,
+          "available_episode_count": 30,
+          "has_playback": true,
+          "playback_count": 694,
+          "heat_value": 47.07,
+          "updated_at": "2026-10-12T13:20:16.244Z"
+        }
+      ],
+      "export_id": 643611,
+      "title": "西游记",
+      "normalized_title": "西游记",
+      "aliases": [],
+      "content_kind": "series",
+      "year": 1986,
+      "area": "中国大陆",
+      "language": "国语",
+      "genres": [
+        "国产剧",
+        "国产",
+        "剧集",
+        "连续剧",
+        "剧情",
+        "动作",
+        "奇幻",
+        "冒险",
+        "古装"
+      ],
+      "actors": [
+        "陈司翰",
+        "费振翔",
+        "牟凤彬",
+        "谢宁",
+        "陈德容",
+        "韩栋",
+        "韩雪",
+        "刘孜",
+        "王帅",
+        "午马",
+        "印小天",
+        "于娜"
+      ],
+      "directors": [
+        "程力栋",
+        "刘仕裕",
+        "肖齐",
+        "何梦华",
+        "未录入",
+        "杨洁"
+      ],
+      "poster_url": "https://example.com/poster.jpg",
+      "remarks": "全25集",
+      "detail_url": "/v1/catalog/av_g70T56hVTSDImWGfaBW8FgGFP8qXM_T8pQ9WKWzSYOaufsWqGzLaftZtf-VNHejk_mcgSpxJMZZcEmc",
+      "playback_groups": [
+        {
+          "id": "yjplayer",
+          "label": "网页播放器",
+          "type": "player",
+          "episode_count": 25,
+          "episodes": []
+        },
+        {
+          "id": "yjm3u8",
+          "label": "m3u8",
+          "type": "m3u8",
+          "episode_count": 25,
+          "episodes": []
+        },
+        {
+          "id": "yjapi",
+          "label": "YJ API",
+          "type": "api",
+          "episode_count": 25,
+          "episodes": []
+        }
+      ],
+      "availability": {
+        "state": "playable",
+        "label": "可播放",
+        "playable": true,
+        "disabled": false,
+        "source": "catalog"
+      },
+      "confidence": 0.95,
+      "heat_value": 93.05,
+      "playback_count": 125,
+      "updated_at": "2026-09-30T11:26:21.193Z",
+      "rank_reason": [
+        "title_match",
+        "pinyin_match",
+        "playback",
+        "heat",
+        "freshness",
+        "facts",
+        "rating"
+      ],
+      "rank_position": 0,
+      "reasons": [],
+      "facts": {
+        "theme_terms": [
+          "西游记",
+          "取经",
+          "孙悟空",
+          "猪八戒",
+          "沙悟净",
+          "唐僧"
+        ],
+        "embedding_terms": [],
+        "intent_phrases": [
+          "西天取经",
+          "收服徒弟",
+          "孙悟空收服"
+        ]
+      }
+    },
+    {
+      "id": "fixture_7ead4a1c71d9c02d",
+      "work_id": "work:yj:8657f2d90f8eecd38e4a",
+      "selected_variant_id": "fixture_7ead4a1c71d9c02d",
+      "default_variant_id": "fixture_7ead4a1c71d9c02d",
+      "season_count": 1,
+      "seasons": [
+        {
+          "variant_id": "fixture_7ead4a1c71d9c02d",
+          "work_id": "work:yj:8657f2d90f8eecd38e4a",
+          "title": "西游记后传",
+          "year": 2000,
+          "available_episode_count": 45,
+          "has_playback": true,
+          "playback_count": 470,
+          "heat_value": 66.85,
+          "updated_at": "2026-10-19T20:24:54.229Z",
+          "selected": true,
+          "default": true
+        }
+      ],
+      "export_id": 51978,
+      "title": "西游记后传",
+      "normalized_title": "西游记后传",
+      "aliases": [],
+      "content_kind": "series",
+      "year": 2000,
+      "area": "中国大陆",
+      "language": "国语",
+      "genres": [
+        "国产剧",
+        "剧情",
+        "动作",
+        "奇幻",
+        "内地",
+        "国产"
+      ],
+      "actors": [
+        "曹荣",
+        "黑子",
+        "黄海冰",
+        "李京",
+        "闾汉彪",
+        "马杰林",
+        "马雅舒",
+        "吴健",
+        "于月仙",
+        "张志伟",
+        "崔岱",
+        "单联丽"
+      ],
+      "directors": [
+        "李源"
+      ],
+      "poster_url": "https://example.com/poster.jpg",
+      "remarks": "全45集",
+      "detail_url": "/v1/catalog/av_Jp937w4Eo1collfqmAnoR-UFAXY3iXwTcLp_Mmnesmw1SjpZ7VJuppF4vFYytAdCQE6_LxzzgiBxqYA",
+      "playback_groups": [
+        {
+          "id": "yjplayer",
+          "label": "网页播放器",
+          "type": "player",
+          "episode_count": 45,
+          "episodes": []
+        },
+        {
+          "id": "yjm3u8",
+          "label": "m3u8",
+          "type": "m3u8",
+          "episode_count": 45,
+          "episodes": []
+        },
+        {
+          "id": "yjapi",
+          "label": "YJ API",
+          "type": "api",
+          "episode_count": 45,
+          "episodes": []
+        }
+      ],
+      "availability": {
+        "state": "playable",
+        "label": "可播放",
+        "playable": true,
+        "disabled": false,
+        "source": "catalog"
+      },
+      "confidence": 0.83,
+      "heat_value": 66.85,
+      "playback_count": 470,
+      "updated_at": "2026-10-19T20:24:54.229Z",
+      "rank_reason": [
+        "title_match",
+        "pinyin_match",
+        "playback",
+        "heat",
+        "freshness",
+        "facts"
+      ],
+      "rank_position": 1,
+      "reasons": [],
+      "facts": {
+        "theme_terms": [
+          "阴谋",
+          "夺宝",
+          "救世",
+          "轮回",
+          "师徒情"
+        ],
+        "embedding_terms": [],
+        "intent_phrases": [
+          "西游记续集",
+          "神话剧",
+          "仙侠"
+        ]
+      }
+    }
+  ],
+  "pagination": {
+    "page": 1,
+    "limit": 20,
+    "offset": 0,
+    "total": 84,
+    "returned_count": 18,
+    "has_more": true,
+    "next_page": 2,
+    "next_offset": 20
+  }
+}

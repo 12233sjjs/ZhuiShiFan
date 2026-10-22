@@ -1,0 +1,167 @@
+{
+  "object": "catalog.episodes",
+  "variant_id": "fixture_ce3cd5758119a112",
+  "title": "嫁金钗",
+  "content_kind": "series",
+  "episode_count": 30,
+  "available_episode_count": 15,
+  "episode_pagination": {
+    "offset": 0,
+    "limit": 48,
+    "returned_count": 15,
+    "total_count": 15,
+    "has_more": false
+  },
+  "episodes": [
+    {
+      "id": "fixture_84616c35c33527cb",
+      "number": 1,
+      "episode_track": "main",
+      "key": "e-0001",
+      "title": "第1集",
+      "token": "fixture_9ebb20f406c0a4c4",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_e9007a0be002286f",
+      "number": 2,
+      "episode_track": "main",
+      "key": "e-0002",
+      "title": "第2集",
+      "token": "fixture_fa8e2e8176118ad7",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_46a28b34a204b159",
+      "number": 3,
+      "episode_track": "main",
+      "key": "e-0003",
+      "title": "第3集",
+      "token": "fixture_f75df138fc27ca18",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_b4a9df4f119f9f9e",
+      "number": 4,
+      "episode_track": "main",
+      "key": "e-0004",
+      "title": "第4集",
+      "token": "fixture_2a91c0b61f47d753",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_5a22141a2b962c1a",
+      "number": 5,
+      "episode_track": "main",
+      "key": "e-0005",
+      "title": "第5集",
+      "token": "fixture_727f901199f876aa",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_dee68f9fac96c845",
+      "number": 6,
+      "episode_track": "main",
+      "key": "e-0006",
+      "title": "第6集",
+      "token": "fixture_a02eb851f8e5f80f",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_1434c06bef6484d8",
+      "number": 7,
+      "episode_track": "main",
+      "key": "e-0007",
+      "title": "第7集",
+      "token": "fixture_caa28473025bc5e8",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_b4389a2e48e95cd3",
+      "number": 8,
+      "episode_track": "main",
+      "key": "e-0008",
+      "title": "第8集",
+      "token": "fixture_72514a66e005705c",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_a32eb9cc623b6de6",
+      "number": 9,
+      "episode_track": "main",
+      "key": "e-0009",
+      "title": "第9集",
+      "token": "fixture_ffe83328e9914e8d",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_b5ed2bdf62ae90f0",
+      "number": 10,
+      "episode_track": "main",
+      "key": "e-0010",
+      "title": "第10集",
+      "token": "fixture_6c1bfe88c19c6af1",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_18461cb7b9189632",
+      "number": 11,
+      "episode_track": "main",
+      "key": "e-0011",
+      "title": "第11集",
+      "token": "fixture_53bfb164191ad3be",
+      "playback_count": 34,
+      "urls": {}
+    },
+    {
+      "id": "fixture_8d91f47719285f9e",
+      "number": 12,
+      "episode_track": "main",
+      "key": "e-0012",
+      "title": "第12集",
+      "token": "fixture_0cfee1ea1a15455e",
+      "playback_count": 34,
+      "urls": {}
+    },
+    {
+      "id": "fixture_823b41e065b882b2",
+      "number": 13,
+      "episode_track": "main",
+      "key": "e-0013",
+      "title": "第13集",
+      "token": "fixture_5339e82b03bdc50a",
+      "playback_count": 34,
+      "urls": {}
+    },
+    {
+      "id": "fixture_d5bef0192bb1c8c3",
+      "number": 14,
+      "episode_track": "main",
+      "key": "e-0014",
+      "title": "第14集",
+      "token": "fixture_b0696f879e58d00b",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_f9a8110272fe82be",
+      "number": 15,
+      "episode_track": "main",
+      "key": "e-0015",
+      "title": "第15集",
+      "token": "fixture_441b0330452be497",
+      "playback_count": 31,
+      "urls": {}
+    }
+  ]
+}

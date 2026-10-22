@@ -1,0 +1,7 @@
+work/
+build/
+dist/
+*.xcodeproj/
+.DS_Store
+*.xcuserstate
+__pycache__/

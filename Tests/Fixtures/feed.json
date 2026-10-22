@@ -1,0 +1,461 @@
+{
+  "object": "home.feed",
+  "strategy": "resource_center_snapshot",
+  "period": "day",
+  "project_id": "dianyingtiantang",
+  "quota": {
+    "section_limit": 11,
+    "cards_per_section": 20,
+    "websearch_query_budget": 4,
+    "websearch_concurrency": 4,
+    "websearch_timeout_ms": 8000
+  },
+  "sections": [
+    {
+      "id": "feed_sec_everyone_watching",
+      "type": "trend",
+      "role": "primary",
+      "title": "大家都在看",
+      "subtitle": "今晚打开就能接上的热播片单",
+      "reason": "center_trending",
+      "priority": 100,
+      "cards": [
+        {
+          "id": "fixture_ce3cd5758119a112",
+          "work_id": "work:yj:2781fed577cc041d7cc2",
+          "seasons": [],
+          "export_id": 943263,
+          "title": "嫁金钗",
+          "normalized_title": "嫁金钗",
+          "aliases": [],
+          "content_kind": "series",
+          "year": 2026,
+          "area": "中国大陆",
+          "language": "国语",
+          "genres": [
+            "国产剧",
+            "国产",
+            "连续剧",
+            "古装",
+            "爱情",
+            "连续",
+            "剧情",
+            "女性传奇",
+            "古装爱情",
+            "电视剧"
+          ],
+          "actors": [
+            "田曦薇",
+            "闫桉",
+            "刘小北",
+            "代高政",
+            "孔琳",
+            "毛林林",
+            "王一楠",
+            "尹文萱",
+            "潘珺雅",
+            "陈紫函",
+            "戴春荣",
+            "李佑川"
+          ],
+          "directors": [
+            "杨龙"
+          ],
+          "poster_url": "https://example.com/poster.jpg",
+          "carousel_url": "https://example.com/poster.jpg",
+          "backdrop_url": "https://example.com/poster.jpg",
+          "remarks": "更新至15集",
+          "playback_groups": [
+            {
+              "id": "yjplayer",
+              "label": "网页播放器",
+              "type": "player",
+              "episode_count": 30,
+              "episodes": []
+            },
+            {
+              "id": "yjm3u8",
+              "label": "m3u8",
+              "type": "m3u8",
+              "episode_count": 30,
+              "episodes": []
+            },
+            {
+              "id": "yjapi",
+              "label": "YJ API",
+              "type": "api",
+              "episode_count": 30,
+              "episodes": []
+            }
+          ],
+          "availability": {
+            "state": "playable",
+            "label": "可播放",
+            "playable": true,
+            "disabled": false,
+            "source": "catalog"
+          },
+          "heat_value": 84068.49,
+          "playback_count": 518,
+          "updated_at": "2026-10-22T11:04:59.328Z",
+          "rank_reason": [],
+          "rank_position": 0,
+          "reasons": [
+            "center_trending_day"
+          ],
+          "facts": {
+            "theme_terms": [
+              "古装",
+              "爱情",
+              "女性传奇",
+              "逆袭",
+              "复仇",
+              "宅斗"
+            ],
+            "embedding_terms": [],
+            "intent_phrases": [
+              "古装逆袭剧",
+              "替身新娘",
+              "冲喜剧情"
+            ]
+          },
+          "detail_url": "/v1/catalog/av_RQKPHe_swmdc2S67YD_FapUsze6-cWDeerX3qvKoejgyu5YFcUxsh5Hh2wmrcc1iPLCzBGy_VU5KvyQ"
+        }
+      ],
+      "browse": {
+        "type": "catalog_browse_request",
+        "label": "查看更多",
+        "method": "GET",
+        "path": "/v1/browse/catalog",
+        "params": {
+          "sort": "trending",
+          "window": "day",
+          "page": "1",
+          "limit": "20"
+        },
+        "page": 1,
+        "limit": 20
+      },
+      "evidence": {
+        "center_sources": [
+          "trending"
+        ],
+        "websearch_used": false,
+        "websearch_queries": []
+      }
+    },
+    {
+      "id": "feed_sec_hot_tv_korean",
+      "type": "collection",
+      "role": "base",
+      "title": "韩剧在追",
+      "subtitle": "从新集开始追也不费劲",
+      "reason": "center_hot_list:tv_korean",
+      "priority": 90,
+      "cards": [
+        {
+          "id": "fixture_2cc904b55101b4a3",
+          "work_id": "work:yj:31a0530e487572e684bc",
+          "export_id": 824715,
+          "title": "现在不是出轨的问题",
+          "normalized_title": "现在不是出轨的问题",
+          "content_kind": "series",
+          "year": 2026,
+          "area": "韩国",
+          "language": "韩语",
+          "genres": [
+            "韩剧",
+            "剧情",
+            "惊悚",
+            "韩国",
+            "剧集",
+            "连续剧",
+            "连续",
+            "集",
+            "国产剧",
+            "国产",
+            "电视剧"
+          ],
+          "actors": [
+            "金宰澈",
+            "金惠秀",
+            "金志勋",
+            "赵汝贞"
+          ],
+          "directors": [
+            "李昌熙",
+            "李昌熙",
+            "christopheda da"
+          ],
+          "poster_url": "https://example.com/poster.jpg",
+          "carousel_url": "https://example.com/poster.jpg",
+          "backdrop_url": "https://example.com/poster.jpg",
+          "remarks": "全8集",
+          "playback_groups": [
+            {
+              "id": "yjplayer",
+              "label": "网页播放器",
+              "type": "player",
+              "episode_count": 8,
+              "episodes": []
+            },
+            {
+              "id": "yjm3u8",
+              "label": "m3u8",
+              "type": "m3u8",
+              "episode_count": 8,
+              "episodes": []
+            },
+            {
+              "id": "yjapi",
+              "label": "YJ API",
+              "type": "api",
+              "episode_count": 8,
+              "episodes": []
+            }
+          ],
+          "availability": {
+            "state": "playable",
+            "label": "可播放",
+            "playable": true,
+            "disabled": false,
+            "source": "catalog"
+          },
+          "score": 8.7,
+          "popularity": 111677,
+          "heat_value": 216.09,
+          "playback_count": 265,
+          "updated_at": "2026-09-27T16:02:08.612Z",
+          "rank_position": 0,
+          "reasons": [
+            "hot_list:tv_korean",
+            "热门韩剧",
+            "douban_hot_snapshot"
+          ],
+          "facts": {
+            "theme_terms": [
+              "韩剧",
+              "剧情",
+              "惊悚",
+              "韩国"
+            ],
+            "embedding_terms": [],
+            "intent_phrases": [
+              "网红夫妇",
+              "贩卖幸福家庭",
+              "医师邻居"
+            ]
+          },
+          "seasons": [],
+          "detail_url": "/v1/catalog/av_O1rk-P_GKC-S84h62NfQoSuVylKvh8Pcov3sZkMhK5_e_18z5HjLTYqfszE1rJvzokZsu3AQbMea1LY"
+        }
+      ],
+      "browse": {
+        "type": "catalog_browse_request",
+        "label": "查看完整榜单",
+        "method": "GET",
+        "path": "/v1/browse/catalog",
+        "params": {
+          "hot_list_key": "tv_korean",
+          "limit": "20"
+        },
+        "page": 1,
+        "limit": 20
+      },
+      "evidence": {
+        "center_sources": [
+          "douban_hot_snapshots:tv_korean"
+        ],
+        "websearch_used": false,
+        "websearch_queries": []
+      }
+    },
+    {
+      "id": "feed_sec_hot_tv_japanese",
+      "type": "collection",
+      "role": "base",
+      "title": "日剧上新",
+      "subtitle": "节奏轻一点，夜里慢慢看",
+      "reason": "center_hot_list:tv_japanese",
+      "priority": 86,
+      "cards": [
+        {
+          "id": "fixture_07b14d8880d28f86",
+          "work_id": "work:yj:502e3b8e174325286321",
+          "export_id": 913110,
+          "title": "幸福伽菜子的快乐杀手生活 第2季",
+          "normalized_title": "幸福伽菜子的快乐杀手生活",
+          "content_kind": "series",
+          "year": 2026,
+          "area": "日本",
+          "language": "日语",
+          "genres": [
+            "日剧",
+            "日本",
+            "连续剧",
+            "剧情",
+            "喜剧",
+            "动作",
+            "连续",
+            "剧集",
+            "电视剧"
+          ],
+          "actors": [
+            "能年玲奈",
+            "藤谷太辅",
+            "山崎纮菜",
+            "矢本悠马",
+            "菅井友香",
+            "菅田俊",
+            "木村多江",
+            "渡部笃郎",
+            "高桥光",
+            "铃川纱由",
+            "森川葵",
+            "盐野瑛久"
+          ],
+          "directors": [
+            "英勉",
+            "健身圣经"
+          ],
+          "poster_url": "https://example.com/poster.jpg",
+          "carousel_url": "https://example.com/poster.jpg",
+          "backdrop_url": "https://example.com/poster.jpg",
+          "remarks": "全5集",
+          "playback_groups": [
+            {
+              "id": "yjplayer",
+              "label": "网页播放器",
+              "type": "player",
+              "episode_count": 5,
+              "episodes": []
+            },
+            {
+              "id": "yjm3u8",
+              "label": "m3u8",
+              "type": "m3u8",
+              "episode_count": 5,
+              "episodes": []
+            },
+            {
+              "id": "yjapi",
+              "label": "YJ API",
+              "type": "api",
+              "episode_count": 5,
+              "episodes": []
+            }
+          ],
+          "availability": {
+            "state": "playable",
+            "label": "可播放",
+            "playable": true,
+            "disabled": false,
+            "source": "catalog"
+          },
+          "score": 6.7,
+          "popularity": 8343,
+          "heat_value": 173.94,
+          "playback_count": 156,
+          "updated_at": "2026-10-19T13:06:28.358Z",
+          "rank_position": 0,
+          "reasons": [
+            "hot_list:tv_japanese",
+            "热门日剧",
+            "douban_hot_snapshot"
+          ],
+          "facts": {
+            "theme_terms": [
+              "喜剧",
+              "动作",
+              "杀手",
+              "漫画改编",
+              "职场",
+              "成长"
+            ],
+            "embedding_terms": [],
+            "intent_phrases": [
+              "日剧推荐",
+              "杀手题材",
+              "喜剧日剧"
+            ]
+          },
+          "seasons": [],
+          "detail_url": "/v1/catalog/av_g7fx20I1EeM8tYkKnCDiIbxfr2oZEPJgNPI4YG0UeU-LcS_5yu63KcTrvt-49dgXS_P_hcsozjQy_3w"
+        }
+      ],
+      "browse": {
+        "type": "catalog_browse_request",
+        "label": "查看完整榜单",
+        "method": "GET",
+        "path": "/v1/browse/catalog",
+        "params": {
+          "hot_list_key": "tv_japanese",
+          "limit": "20"
+        },
+        "page": 1,
+        "limit": 20
+      },
+      "evidence": {
+        "center_sources": [
+          "douban_hot_snapshots:tv_japanese"
+        ],
+        "websearch_used": false,
+        "websearch_queries": []
+      }
+    }
+  ],
+  "source_statuses": [
+    {
+      "sourceId": "feed_douban_hot_snapshots",
+      "sourceType": "resource_center",
+      "status": "ok",
+      "message": "Home feed snapshot uses Resource Center douban-hot-snapshots plus everyone-watching trend"
+    },
+    {
+      "sourceId": "trending",
+      "sourceType": "resource_center",
+      "status": "ok"
+    },
+    {
+      "sourceId": "douban_hot_snapshots",
+      "sourceType": "resource_center",
+      "status": "ok"
+    },
+    {
+      "sourceId": "douban_cinema_snapshots",
+      "sourceType": "resource_center",
+      "status": "ok"
+    },
+    {
+      "sourceId": "feed_topic_plan",
+      "sourceType": "ai",
+      "status": "skipped",
+      "message": "topic generation disabled; using fixed home sections"
+    },
+    {
+      "sourceId": "feed_snapshot",
+      "sourceType": "ai",
+      "status": "ok",
+      "message": "serving generated snapshot"
+    }
+  ],
+  "personalization": {
+    "applied": false,
+    "source": "none",
+    "cluster_id": "default",
+    "cluster_confidence": 0,
+    "signals": []
+  },
+  "generated_at": "2026-10-22T11:39:36.683Z",
+  "expires_at": "2026-10-22T11:49:36.683Z",
+  "next_cursor": "eyJzZWN0aW9uX29mZnNldCI6M30",
+  "meta": {
+    "mode": "preview",
+    "section_offset": 0,
+    "section_limit": 3,
+    "cards_per_section": 10,
+    "returned_sections": 3,
+    "total_sections": 11,
+    "next_cursor": "eyJzZWN0aW9uX29mZnNldCI6M30"
+  }
+}

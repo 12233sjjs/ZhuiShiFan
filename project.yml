@@ -1,0 +1,54 @@
+name: ZhuiShiFan
+options:
+  minimumXcodeGenVersion: 2.46.0
+  deploymentTarget:
+    iOS: '16.0'
+settings:
+  base:
+    SWIFT_VERSION: '5.0'
+    TARGETED_DEVICE_FAMILY: '1'
+    CODE_SIGNING_ALLOWED: NO
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+targets:
+  ZhuiShiFan:
+    type: application
+    platform: iOS
+    sources: [App]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zhuishifan.iphone
+        MARKETING_VERSION: 1.0.0
+        CURRENT_PROJECT_VERSION: 1
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: 追视番通用
+        CFBundleDevelopmentRegion: zh_CN
+        LSRequiresIPhoneOS: true
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoadsForMedia: true
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+  ZhuiShiFanTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [Tests]
+    dependencies:
+      - target: ZhuiShiFan
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.zhuishifan.tests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  ZhuiShiFan:
+    build:
+      targets:
+        ZhuiShiFan: all
+    test:
+      targets: [ZhuiShiFanTests]

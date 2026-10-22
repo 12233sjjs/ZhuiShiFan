@@ -1,0 +1,58 @@
+{
+  "object": "playback.resolve",
+  "token": "fixture_9ebb20f406c0a4c4",
+  "current_episode": {
+    "id": "fixture_84616c35c33527cb",
+    "token": "fixture_9ebb20f406c0a4c4",
+    "episode_number": 1,
+    "sequence_index": 1,
+    "source_previous_episode_token": null,
+    "source_next_episode_token": "fixture_fa8e2e8176118ad7",
+    "previous_episode_token": null,
+    "next_episode_token": "fixture_fa8e2e8176118ad7",
+    "episode_key": "e-0001",
+    "display_name": "第1集",
+    "urls": {}
+  },
+  "line_options": [
+    {
+      "id": "playback:yj:be8fd58d0b79e83a1d54",
+      "playback_source_id": "playback:yj:be8fd58d0b79e83a1d54",
+      "provider_id": "bytevod-lv3",
+      "provider_name": "1080P-官方S",
+      "play_from": "lv3",
+      "source_vod_id": "source:bytevod-lv3:49443",
+      "label": "1080P-官方S",
+      "display_label": "1080P-官方S",
+      "url": "resolve://fixture-ticket",
+      "url_kind": "resolve_ticket",
+      "resolved": false,
+      "resolve_mode": "parse",
+      "resolve_required": true,
+      "default_priority": true,
+      "preference_weight": 1000,
+      "minimum_user_level": 0,
+      "selected": true
+    },
+    {
+      "id": "playback:yj:3ca6ca85b98a447d439b",
+      "playback_source_id": "playback:yj:3ca6ca85b98a447d439b",
+      "provider_id": "bytevod-lv2",
+      "provider_name": "1080P-官方Z",
+      "play_from": "lv2",
+      "source_vod_id": "source:bytevod-lv2:49443",
+      "label": "1080P-官方Z",
+      "display_label": "1080P-官方Z",
+      "url": "resolve://fixture-ticket",
+      "url_kind": "resolve_ticket",
+      "resolved": false,
+      "resolve_mode": "parse",
+      "resolve_required": true,
+      "default_priority": true,
+      "preference_weight": 998,
+      "minimum_user_level": 0,
+      "selected": false,
+      "price_multiplier_bps": 12000
+    }
+  ]
+}

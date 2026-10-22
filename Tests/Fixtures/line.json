@@ -1,0 +1,37 @@
+{
+  "object": "playback.line.resolve",
+  "token": "fixture_9ebb20f406c0a4c4",
+  "content_kind": "series",
+  "episode_count": 15,
+  "current_episode": {
+    "id": "fixture_84616c35c33527cb",
+    "token": "fixture_9ebb20f406c0a4c4",
+    "episode_number": 1,
+    "sequence_index": 1,
+    "source_previous_episode_token": null,
+    "source_next_episode_token": "fixture_fa8e2e8176118ad7",
+    "previous_episode_token": null,
+    "next_episode_token": "fixture_fa8e2e8176118ad7",
+    "episode_key": "e-0001",
+    "display_name": "第1集",
+    "urls": {}
+  },
+  "line": {
+    "id": "playback:yj:be8fd58d0b79e83a1d54",
+    "provider_id": "bytevod-lv3",
+    "play_from": "lv3",
+    "source_vod_id": "source:bytevod-lv3:49443",
+    "label": "1080P-官方S",
+    "url": "https://example.com/video.mp4",
+    "url_kind": "mp4",
+    "resolved": true,
+    "resolve_mode": "parse",
+    "resolve_required": false,
+    "default_priority": true,
+    "preference_weight": 1000,
+    "token_scenario": "series_intro_zero",
+    "minimum_user_level": 0,
+    "selected": true
+  },
+  "view": "compact"
+}

@@ -1,0 +1,421 @@
+{
+  "current_episode_count": 15,
+  "total_episode_count": 30,
+  "update_status": "ongoing",
+  "is_completed": false,
+  "episode_progress_text": "更新至15集 / 共30集",
+  "object": "catalog.detail",
+  "id": "fixture_ce3cd5758119a112",
+  "variant_id": "fixture_ce3cd5758119a112",
+  "selected_variant_id": "fixture_ce3cd5758119a112",
+  "default_variant_id": "fixture_ce3cd5758119a112",
+  "title": "嫁金钗",
+  "normalized_title": "嫁金钗",
+  "content_kind": "series",
+  "year": 2026,
+  "area": "中国大陆",
+  "language": "国语",
+  "genres": [
+    "国产剧",
+    "国产",
+    "连续剧",
+    "古装",
+    "爱情",
+    "连续",
+    "剧情",
+    "女性传奇",
+    "古装爱情",
+    "电视剧"
+  ],
+  "actors": [
+    "田曦薇",
+    "闫桉",
+    "刘小北",
+    "代高政",
+    "孔琳",
+    "毛林林",
+    "王一楠",
+    "尹文萱",
+    "潘珺雅",
+    "陈紫函",
+    "戴春荣",
+    "李佑川"
+  ],
+  "directors": [
+    "杨龙"
+  ],
+  "poster_url": "https://example.com/poster.jpg",
+  "carousel_url": "https://example.com/poster.jpg",
+  "backdrop_url": "https://example.com/poster.jpg",
+  "remarks": "更新至15集 / 共30集",
+  "description": "阿丑原是街上倒夜香的低贱少女,人人皆可践踏欺凌,只因一张酷似侯府千金魏娆的面容,意外成为国公府世子陆濯的冲喜新娘。阿丑野心勃勃,一心借机上位,然而濒死的新婚丈夫忽然苏醒,鸠占鹊巢引来连绵灾祸。魏娆(君黛)恨她鸠占鹊巢,急欲除之后快;陆濯以她为蛇蝎妇人,百般提防谋算。国公府明面一团和气,实则陷阱重重、步步杀机。阿丑稳扎稳打精心谋划,手段百出获得丈夫痴爱,更查出了自己身世的秘密,与至亲最终团圆,从底层夜香妇一路逆袭上位,过出光芒万丈的锦绣人生。",
+  "episode_count": 15,
+  "available_episode_count": 15,
+  "episodes": [
+    {
+      "id": "fixture_84616c35c33527cb",
+      "number": 1,
+      "episode_track": "main",
+      "key": "e-0001",
+      "title": "第1集",
+      "token": "fixture_9ebb20f406c0a4c4",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_e9007a0be002286f",
+      "number": 2,
+      "episode_track": "main",
+      "key": "e-0002",
+      "title": "第2集",
+      "token": "fixture_fa8e2e8176118ad7",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_46a28b34a204b159",
+      "number": 3,
+      "episode_track": "main",
+      "key": "e-0003",
+      "title": "第3集",
+      "token": "fixture_f75df138fc27ca18",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_b4a9df4f119f9f9e",
+      "number": 4,
+      "episode_track": "main",
+      "key": "e-0004",
+      "title": "第4集",
+      "token": "fixture_2a91c0b61f47d753",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_5a22141a2b962c1a",
+      "number": 5,
+      "episode_track": "main",
+      "key": "e-0005",
+      "title": "第5集",
+      "token": "fixture_727f901199f876aa",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_dee68f9fac96c845",
+      "number": 6,
+      "episode_track": "main",
+      "key": "e-0006",
+      "title": "第6集",
+      "token": "fixture_a02eb851f8e5f80f",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_1434c06bef6484d8",
+      "number": 7,
+      "episode_track": "main",
+      "key": "e-0007",
+      "title": "第7集",
+      "token": "fixture_caa28473025bc5e8",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_b4389a2e48e95cd3",
+      "number": 8,
+      "episode_track": "main",
+      "key": "e-0008",
+      "title": "第8集",
+      "token": "fixture_72514a66e005705c",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_a32eb9cc623b6de6",
+      "number": 9,
+      "episode_track": "main",
+      "key": "e-0009",
+      "title": "第9集",
+      "token": "fixture_ffe83328e9914e8d",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_b5ed2bdf62ae90f0",
+      "number": 10,
+      "episode_track": "main",
+      "key": "e-0010",
+      "title": "第10集",
+      "token": "fixture_6c1bfe88c19c6af1",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_18461cb7b9189632",
+      "number": 11,
+      "episode_track": "main",
+      "key": "e-0011",
+      "title": "第11集",
+      "token": "fixture_53bfb164191ad3be",
+      "playback_count": 34,
+      "urls": {}
+    },
+    {
+      "id": "fixture_8d91f47719285f9e",
+      "number": 12,
+      "episode_track": "main",
+      "key": "e-0012",
+      "title": "第12集",
+      "token": "fixture_0cfee1ea1a15455e",
+      "playback_count": 34,
+      "urls": {}
+    },
+    {
+      "id": "fixture_823b41e065b882b2",
+      "number": 13,
+      "episode_track": "main",
+      "key": "e-0013",
+      "title": "第13集",
+      "token": "fixture_5339e82b03bdc50a",
+      "playback_count": 34,
+      "urls": {}
+    },
+    {
+      "id": "fixture_d5bef0192bb1c8c3",
+      "number": 14,
+      "episode_track": "main",
+      "key": "e-0014",
+      "title": "第14集",
+      "token": "fixture_b0696f879e58d00b",
+      "playback_count": 35,
+      "urls": {}
+    },
+    {
+      "id": "fixture_f9a8110272fe82be",
+      "number": 15,
+      "episode_track": "main",
+      "key": "e-0015",
+      "title": "第15集",
+      "token": "fixture_441b0330452be497",
+      "playback_count": 31,
+      "urls": {}
+    }
+  ],
+  "episode_pagination": {
+    "offset": 0,
+    "limit": 15,
+    "returned_count": 15,
+    "total_count": 15,
+    "has_more": false
+  },
+  "variants": [
+    {
+      "id": "fixture_ce3cd5758119a112",
+      "variant_id": "fixture_ce3cd5758119a112",
+      "work_id": "work:yj:2781fed577cc041d7cc2",
+      "title": "嫁金钗",
+      "season_label": "嫁金钗",
+      "year": 2026,
+      "episode_count": 30,
+      "available_episode_count": 15,
+      "has_playback": true,
+      "playback_count": 518,
+      "heat_value": 362.23,
+      "updated_at": "2026-10-22T11:41:08.514Z",
+      "selected": true,
+      "default": true
+    }
+  ],
+  "seasons": [
+    {
+      "id": "fixture_ce3cd5758119a112",
+      "variant_id": "fixture_ce3cd5758119a112",
+      "work_id": "work:yj:2781fed577cc041d7cc2",
+      "title": "嫁金钗",
+      "season_label": "嫁金钗",
+      "year": 2026,
+      "episode_count": 30,
+      "available_episode_count": 15,
+      "has_playback": true,
+      "playback_count": 518,
+      "heat_value": 362.23,
+      "updated_at": "2026-10-22T11:41:08.514Z",
+      "selected": true,
+      "default": true
+    }
+  ],
+  "season_count": 1,
+  "playback_groups": [],
+  "heat_value": 362.23,
+  "playback_count": 518,
+  "ai_entry_actions": [
+    {
+      "key": "similar:av_RQKPHe_swmdc2S67YD_FapUsze6-cWDeerX3qvKoejgyu5YFcUxsh5Hh2wmrcc1iPLCzBGy_VU5KvyQ",
+      "label": "找类似这部",
+      "prompt": "找类似《嫁金钗》",
+      "icon": "similar",
+      "metadata": {
+        "agent_runtime": "smart_search_workflow",
+        "ai_entry_surface": "player_detail",
+        "source_variant_id": "fixture_ce3cd5758119a112",
+        "source_title": "嫁金钗",
+        "kind": "series",
+        "ai_entry_key": "similar:av_RQKPHe_swmdc2S67YD_FapUsze6-cWDeerX3qvKoejgyu5YFcUxsh5Hh2wmrcc1iPLCzBGy_VU5KvyQ",
+        "intent_key": "similar_title",
+        "relation_type": "similar_theme",
+        "seed_variant_id": "fixture_ce3cd5758119a112",
+        "seed_query": "嫁金钗",
+        "same_kind": "true"
+      }
+    },
+    {
+      "key": "actor:田曦薇",
+      "label": "田曦薇作品",
+      "prompt": "找田曦薇还演过哪些可播放影片",
+      "icon": "actor",
+      "metadata": {
+        "agent_runtime": "smart_search_workflow",
+        "ai_entry_surface": "player_detail",
+        "source_variant_id": "fixture_ce3cd5758119a112",
+        "source_title": "嫁金钗",
+        "ai_entry_key": "actor:田曦薇",
+        "intent_key": "person_actor",
+        "relation_type": "cast",
+        "person_name": "田曦薇",
+        "person_role": "actor",
+        "person_mode": "filter",
+        "search_fields": "actor",
+        "sort": "heat_desc"
+      }
+    },
+    {
+      "key": "actor:闫桉",
+      "label": "闫桉作品",
+      "prompt": "找闫桉还演过哪些可播放影片",
+      "icon": "actor",
+      "metadata": {
+        "agent_runtime": "smart_search_workflow",
+        "ai_entry_surface": "player_detail",
+        "source_variant_id": "fixture_ce3cd5758119a112",
+        "source_title": "嫁金钗",
+        "ai_entry_key": "actor:闫桉",
+        "intent_key": "person_actor",
+        "relation_type": "cast",
+        "person_name": "闫桉",
+        "person_role": "actor",
+        "person_mode": "filter",
+        "search_fields": "actor",
+        "sort": "heat_desc"
+      }
+    },
+    {
+      "key": "actor:刘小北",
+      "label": "刘小北作品",
+      "prompt": "找刘小北还演过哪些可播放影片",
+      "icon": "actor",
+      "metadata": {
+        "agent_runtime": "smart_search_workflow",
+        "ai_entry_surface": "player_detail",
+        "source_variant_id": "fixture_ce3cd5758119a112",
+        "source_title": "嫁金钗",
+        "ai_entry_key": "actor:刘小北",
+        "intent_key": "person_actor",
+        "relation_type": "cast",
+        "person_name": "刘小北",
+        "person_role": "actor",
+        "person_mode": "filter",
+        "search_fields": "actor",
+        "sort": "heat_desc"
+      }
+    },
+    {
+      "key": "director:杨龙",
+      "label": "杨龙导演作品",
+      "prompt": "找杨龙还导演过哪些可播放影片",
+      "icon": "director",
+      "metadata": {
+        "agent_runtime": "smart_search_workflow",
+        "ai_entry_surface": "player_detail",
+        "source_variant_id": "fixture_ce3cd5758119a112",
+        "source_title": "嫁金钗",
+        "ai_entry_key": "director:杨龙",
+        "intent_key": "person_director",
+        "relation_type": "director",
+        "person_name": "杨龙",
+        "person_role": "director",
+        "person_mode": "filter",
+        "search_fields": "director",
+        "sort": "heat_desc"
+      }
+    },
+    {
+      "key": "genre:国产剧",
+      "label": "国产剧热播",
+      "prompt": "热门国产剧",
+      "icon": "genre",
+      "metadata": {
+        "agent_runtime": "smart_search_workflow",
+        "ai_entry_surface": "player_detail",
+        "source_variant_id": "fixture_ce3cd5758119a112",
+        "source_title": "嫁金钗",
+        "ai_entry_key": "genre:国产剧",
+        "intent_key": "genre_hot",
+        "relation_type": "similar_theme",
+        "kind": "series",
+        "area": "CN",
+        "sort": "heat_desc"
+      }
+    },
+    {
+      "key": "genre:国产",
+      "label": "国产热播",
+      "prompt": "热门国产剧",
+      "icon": "genre",
+      "metadata": {
+        "agent_runtime": "smart_search_workflow",
+        "ai_entry_surface": "player_detail",
+        "source_variant_id": "fixture_ce3cd5758119a112",
+        "source_title": "嫁金钗",
+        "ai_entry_key": "genre:国产",
+        "intent_key": "genre_hot",
+        "relation_type": "similar_theme",
+        "kind": "series",
+        "area": "CN",
+        "sort": "heat_desc"
+      }
+    }
+  ],
+  "playback_skip_settings_preset": {
+    "source": "community_median",
+    "intro_end_seconds": 98,
+    "outro_from_end_seconds": 149.5,
+    "sample_count": 546,
+    "report_count": 546,
+    "updated_at": "2026-10-22 11:38:32.665"
+  },
+  "recent_update": {
+    "display_text": "最近更新 第15集",
+    "latest_episode_token": "fixture_441b0330452be497",
+    "latest_episode_number": 15,
+    "last_updated_at": "2026-10-22T08:36:29.924Z"
+  },
+  "watch_calendar_forecast": {
+    "profile": "aimovie_watch_calendar_v1",
+    "source": "published_watch_calendar_snapshot",
+    "prediction_only": true,
+    "forecasts": [
+      {
+        "week": "current",
+        "snapshot_id": "watch-calendar-snapshot:24007848-96f2-475b-b168-c780984a946a",
+        "items": []
+      },
+      {
+        "week": "next",
+        "snapshot_id": "watch-calendar-snapshot:981bc7cf-6c8a-47e9-862f-a4c6f548fe36",
+        "items": []
+      }
+    ]
+  }
+}
