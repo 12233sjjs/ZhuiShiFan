@@ -13,6 +13,20 @@ actor KanjuAPI {
 
     init(session: URLSession = .shared) { self.session = session }
 
+    func account() async throws -> AccountProfile { try await request("/v1/users/me") }
+
+    func login(account: String, password: String) async throws -> AccountProfile {
+        let body = try JSONSerialization.data(withJSONObject: ["account": account, "password": password])
+        let _: LoginResponse = try await request("/v1/users/password/login", body: body)
+        let profile = try await self.account()
+        guard profile.authenticated else {
+            throw SiteError(message: "登录请求已提交，但会话尚未确认，请重试。", status: nil)
+        }
+        return profile
+    }
+
+    func useBackup() { origin = Self.backupOrigin }
+
     static func decoder() -> JSONDecoder {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -96,7 +110,7 @@ actor KanjuAPI {
             origin = Self.backupOrigin
             // Resolving a line can consume site quota. Never replay an ambiguous POST.
             guard body == nil else {
-                throw SiteError(message: "主站连接失败，已切换备用站。请点击重试播放。", status: nil)
+                throw SiteError(message: "主站连接失败，已切换备用站。请重新提交当前操作。", status: nil)
             }
             return try await perform(path, body: nil, origin: Self.backupOrigin)
         }

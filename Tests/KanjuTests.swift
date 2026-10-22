@@ -1,7 +1,49 @@
 import XCTest
+import UIKit
 @testable import ZhuiShiFan
 
 final class KanjuTests: XCTestCase {
+    @MainActor
+    func testFullscreenPresentationDoesNotCountAsNavigationExit() {
+        let detail = UIViewController()
+        let navigation = UINavigationController(rootViewController: detail)
+        let fullscreen = UIViewController()
+        detail.present(fullscreen, animated: false)
+        XCTAssertFalse(NavigationExitObserver.ExitController.hasExited(owner: detail, navigation: navigation))
+        navigation.setViewControllers([UIViewController()], animated: false)
+        XCTAssertTrue(NavigationExitObserver.ExitController.hasExited(owner: detail, navigation: navigation))
+    }
+
+    func testNativeLoginConfirmsSessionBeforeReportingSuccess() async throws {
+        let session = makeSession()
+        defer { session.invalidateAndCancel(); StubProtocol.handler = nil }
+        var paths: [String] = []
+        StubProtocol.handler = { request in
+            paths.append(request.url!.path)
+            if request.url!.path.hasSuffix("/login") {
+                XCTAssertEqual(request.httpMethod, "POST")
+                return (200, Data("{}".utf8))
+            }
+            return (200, Data("{\"authenticated\":true,\"display_name\":\"测试账户\"}".utf8))
+        }
+        let profile = try await KanjuAPI(session: session).login(account: "fixture", password: "fixture")
+        XCTAssertTrue(profile.authenticated)
+        XCTAssertEqual(profile.displayName, "测试账户")
+        XCTAssertEqual(paths, ["/v1/users/password/login", "/v1/users/me"])
+    }
+
+    func testNativeLoginRejectsUnconfirmedSession() async throws {
+        let session = makeSession()
+        defer { session.invalidateAndCancel(); StubProtocol.handler = nil }
+        StubProtocol.handler = { request in
+            (200, Data((request.url!.path.hasSuffix("/login") ? "{}" : "{\"authenticated\":false}").utf8))
+        }
+        do {
+            _ = try await KanjuAPI(session: session).login(account: "fixture", password: "fixture")
+            XCTFail("Must not report successful login without confirmed session")
+        } catch { XCTAssertTrue(error.localizedDescription.contains("会话尚未确认")) }
+    }
+
     private func fixture<T: Decodable>(_ name: String, as type: T.Type = T.self) throws -> T {
         let url = try XCTUnwrap(Bundle(for: Self.self).url(forResource: name, withExtension: "json"))
         return try KanjuAPI.decoder().decode(T.self, from: Data(contentsOf: url))

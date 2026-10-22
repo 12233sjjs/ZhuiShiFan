@@ -24,6 +24,12 @@ final class PlayerModel: ObservableObject {
 
     init(movie: Movie) { self.movie = movie }
 
+    deinit {
+        playbackTask?.cancel()
+        player?.pause()
+        if let failureObserver { NotificationCenter.default.removeObserver(failureObserver) }
+    }
+
     func load() async {
         guard !loading else { return }
         loading = true

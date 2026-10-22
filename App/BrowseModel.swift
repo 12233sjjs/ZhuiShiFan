@@ -17,12 +17,12 @@ final class BrowseModel: ObservableObject {
     func load(_ text: String) async {
         let revision = UUID()
         self.revision = revision
-        query = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        let newQuery = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        if newQuery != query { sections = []; results = [] }
+        query = newQuery
         loading = true
         loadingMore = false
         message = nil
-        sections = []
-        results = []
         cursor = nil
         hasMore = false
         nextPage = 1
@@ -43,6 +43,7 @@ final class BrowseModel: ObservableObject {
         } catch {
             guard self.revision == revision else { return }
             if !Task.isCancelled { message = error.localizedDescription }
+            else if sections.isEmpty && results.isEmpty { message = "加载已中断，请点击重试。" }
         }
         guard self.revision == revision else { return }
         usingBackup = await KanjuAPI.shared.origin == KanjuAPI.backupOrigin

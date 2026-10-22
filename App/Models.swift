@@ -1,5 +1,11 @@
 import Foundation
 
+struct AccountProfile: Decodable {
+    let authenticated: Bool
+    let displayName: String?
+}
+struct LoginResponse: Decodable {}
+
 struct Movie: Decodable, Identifiable {
     let id: String
     let title: String

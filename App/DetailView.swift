@@ -119,7 +119,7 @@ struct DetailView: View {
         .background(Color(red: 0.035, green: 0.045, blue: 0.065))
         .navigationBarTitleDisplayMode(.inline)
         .task { if model.episodes.isEmpty { await model.load() } }
-        .onDisappear { model.stop() }
+        .background(NavigationExitObserver(onExit: { model.stop() }).frame(width: 0, height: 0))
         .sheet(isPresented: $showSite) { SiteAccountView() }
     }
 }
@@ -137,47 +137,8 @@ struct NativePlayer: UIViewControllerRepresentable {
         if controller.player !== player { controller.player = player }
     }
     static func dismantleUIViewController(_ controller: AVPlayerViewController, coordinator: ()) {
-        controller.player?.pause()
         controller.player = nil
     }
 }
 
-struct SiteAccountView: View {
-    @Environment(\.dismiss) private var dismiss
-    @State private var origin: URL?
-    @State private var saving = false
-    var body: some View {
-        NavigationStack {
-            Group {
-                if let origin { AccountWebView(url: origin) }
-                else { ProgressView() }
-            }
-            .navigationTitle("网站账户").navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("完成") {
-                        saving = true
-                        WKWebsiteDataStore.default().httpCookieStore.getAllCookies { cookies in
-                            for cookie in cookies where ["kanju17.com", "kanju21.com"].contains(cookie.domain.trimmingCharacters(in: CharacterSet(charactersIn: "."))) {
-                                HTTPCookieStorage.shared.setCookie(cookie)
-                            }
-                            DispatchQueue.main.async { dismiss() }
-                        }
-                    }.disabled(saving)
-                }
-            }
-        }
-        .interactiveDismissDisabled()
-        .task { origin = await KanjuAPI.shared.origin }
-    }
-}
 
-struct AccountWebView: UIViewRepresentable {
-    let url: URL
-    func makeUIView(context: Context) -> WKWebView {
-        let web = WKWebView()
-        web.load(URLRequest(url: url))
-        return web
-    }
-    func updateUIView(_ web: WKWebView, context: Context) {}
-}
