@@ -26,7 +26,6 @@ final class PlayerModel: ObservableObject {
 
     deinit {
         playbackTask?.cancel()
-        player?.pause()
         if let failureObserver { NotificationCenter.default.removeObserver(failureObserver) }
     }
 
