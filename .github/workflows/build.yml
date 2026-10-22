@@ -34,6 +34,8 @@ jobs:
           set -euo pipefail
           DEVICE=$(xcrun simctl list devices available -j | python3 -c 'import json,sys; d=json.load(sys.stdin); print(next(x["udid"] for v in d["devices"].values() for x in v if x["name"].startswith("iPhone")))')
           echo "SIM_DEVICE=$DEVICE" >> "$GITHUB_ENV"
+          xcrun simctl boot "$DEVICE"
+          xcrun simctl bootstatus "$DEVICE" -b
           xcodebuild test -project ZhuiShiFan.xcodeproj -scheme ZhuiShiFan -configuration Debug \
             -destination "platform=iOS Simulator,id=$DEVICE" -derivedDataPath build/simulator \
             -resultBundlePath dist/Tests.xcresult -parallel-testing-enabled NO \
@@ -60,6 +62,7 @@ jobs:
           APP=work/package/Payload/ZhuiShiFan.app
           codesign --force --sign - --timestamp=none "$APP"
           codesign --verify --deep --strict "$APP"
+          python3 -c 'import plistlib; p=plistlib.load(open("work/package/Payload/ZhuiShiFan.app/Info.plist", "rb")); assert p["UIDeviceFamily"] == [1], p["UIDeviceFamily"]; assert p["MinimumOSVersion"] == "16.0"; assert p["CFBundleDisplayName"] == "追视番通用"'
           /usr/libexec/PlistBuddy -c 'Print :MinimumOSVersion' "$APP/Info.plist"
           lipo -archs "$APP/ZhuiShiFan"
           (cd work/package && zip -qry ../../dist/ZhuiShiFan-TrollStore.ipa Payload)
