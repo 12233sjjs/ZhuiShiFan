@@ -16,6 +16,7 @@ struct BrowseView: View {
     @State private var text = ""
     @State private var query = ""
     @State private var showAccount = false
+    @State private var showBrowser = false
 
     var body: some View {
         NavigationStack {
@@ -65,11 +66,15 @@ struct BrowseView: View {
             .navigationTitle("追视番通用")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
+                    Button { showBrowser = true } label: { Label("浏览器", systemImage: "globe") }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button { showAccount = true } label: { Label("网站账户", systemImage: "person.crop.circle") }
                         .accessibilityIdentifier("accountButton")
                 }
             }
             .sheet(isPresented: $showAccount, onDismiss: { Task { await model.load(query) } }) { SiteAccountView() }
+            .sheet(isPresented: $showBrowser) { BrowserView() }
             .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: "搜索电影、电视剧、动漫")
             .onSubmit(of: .search) { query = text.trimmingCharacters(in: .whitespacesAndNewlines) }
             .onChange(of: text) { if $0.isEmpty { query = "" } }

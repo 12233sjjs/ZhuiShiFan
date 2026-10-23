@@ -15,7 +15,7 @@ struct DetailView: View {
                 ZStack {
                     Color.black
                     if let player = model.player {
-                        NativePlayer(player: player)
+                        PlaybackSurface(player: player, title: model.movie.title)
                     } else if model.resolving {
                         ProgressView("正在连接播放线路…")
                     } else {
