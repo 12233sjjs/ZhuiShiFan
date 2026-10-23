@@ -1,8 +1,37 @@
 import XCTest
 import UIKit
+import WebKit
 @testable import ZhuiShiFan
 
 final class KanjuTests: XCTestCase {
+    @MainActor
+    func testBundledAdRulesCompileInWebKit() {
+        let done = expectation(description: "Bundled WebKit ad rules compile")
+        let webView = WKWebView()
+        AdBlocking.install(on: webView) { error in
+            XCTAssertNil(error)
+            done.fulfill()
+        }
+        wait(for: [done], timeout: 60)
+    }
+
+    func testAdRulesMatchHostBoundaries() throws {
+        let encoded = AdBlocking.rules(hosts: "127.0.0.1 ads.example.org\n127.0.0.1 localhost\n")
+        let rules = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(encoded.utf8)) as? [[String: Any]])
+        XCTAssertEqual(rules.count, 1)
+        let trigger = try XCTUnwrap(rules[0]["trigger"] as? [String: String])
+        let expression = try NSRegularExpression(pattern: XCTUnwrap(trigger["url-filter"]))
+        for (url, matches) in [
+            ("https://ads.example.org/banner.js", true),
+            ("https://cdn.ads.example.org/banner.js", true),
+            ("https://ads.example.org:443/banner.js", true),
+            ("https://ads.example.org.evil.test/banner.js", false),
+            ("https://video.example.org/ads.example.org/banner.js", false)
+        ] {
+            XCTAssertEqual(expression.firstMatch(in: url, range: NSRange(url.startIndex..., in: url)) != nil, matches, url)
+        }
+    }
+
     @MainActor
     func testFullscreenPresentationDoesNotCountAsNavigationExit() {
         let detail = UIViewController()
