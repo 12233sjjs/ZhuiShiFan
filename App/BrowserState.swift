@@ -130,8 +130,7 @@ final class BrowserState: NSObject, ObservableObject, Identifiable, WKNavigation
                     guard let self, self.generation == token, self.networkAllowed else { return }
                     self.webView.evaluateJavaScript("navigator.userAgent") { [weak self] agent, _ in
                         guard let self, self.generation == token, self.networkAllowed else { return }
-                        self.webView.evaluateJavaScript("document.querySelectorAll('video').forEach(v => v.pause())",
-                                                       in: video.frame, in: .page) { _ in }
+                        self.pauseWebMedia()
                         self.playback = BrowserPlayback(video: video, cookies: cookies, userAgent: agent as? String)
                     }
                 }
