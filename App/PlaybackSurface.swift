@@ -12,6 +12,7 @@ struct PlaybackSurface: View {
     @State private var fill = false
     @State private var speed: Float = 1
     @State private var scrub: Double?
+    @State private var muted = false
 
     var body: some View {
         GeometryReader { geometry in
@@ -39,8 +40,9 @@ struct PlaybackSurface: View {
                         HStack {
                             control("锁定", "lock.open") { locked = true }
                             Spacer()
-                            control("静音", player.isMuted ? "speaker.slash" : "speaker.wave.2") {
-                                player.isMuted.toggle()
+                            control("静音", muted ? "speaker.slash" : "speaker.wave.2") {
+                                muted.toggle()
+                                player.isMuted = muted
                             }
                         }
                         Spacer(minLength: 0)
@@ -93,12 +95,9 @@ struct PlaybackSurface: View {
             }.foregroundStyle(.white)
         }
         .fullScreenCover(isPresented: $fullscreen) {
-            PlaybackSurface(player: player, title: title, expanded: true, close: { fullscreen = false })
-                .background(Color.black.ignoresSafeArea())
-                .statusBarHidden()
-                .onAppear { rotate(.landscape) }
-                .onDisappear { rotate(.portrait) }
+            PlaybackWindow(player: player, title: title, close: { fullscreen = false })
         }
+        .onAppear { muted = player.isMuted }
     }
 
     private func control(_ label: String, _ icon: String, action: @escaping () -> Void) -> some View {
@@ -106,16 +105,29 @@ struct PlaybackSurface: View {
             .accessibilityLabel(label)
     }
     private func valid(_ value: Double) -> Double { value.isFinite ? max(value, 0) : 0 }
-    private func rotate(_ orientations: UIInterfaceOrientationMask) {
-        guard let scene = UIApplication.shared.connectedScenes
-            .compactMap({ $0 as? UIWindowScene }).first(where: { $0.activationState == .foregroundActive }) else { return }
-        scene.requestGeometryUpdate(.iOS(interfaceOrientations: orientations))
-    }
     private func clock(_ value: Double) -> String {
         let seconds = Int(valid(value))
         return seconds >= 3600
             ? String(format: "%d:%02d:%02d", seconds / 3600, seconds / 60 % 60, seconds % 60)
             : String(format: "%02d:%02d", seconds / 60, seconds % 60)
+    }
+}
+
+struct PlaybackWindow: View {
+    let player: AVPlayer
+    let title: String
+    let close: () -> Void
+    var body: some View {
+        PlaybackSurface(player: player, title: title, expanded: true, close: close)
+            .background(Color.black.ignoresSafeArea())
+            .statusBarHidden()
+            .onAppear { rotate(.landscape) }
+            .onDisappear { rotate(.portrait) }
+    }
+    private func rotate(_ orientations: UIInterfaceOrientationMask) {
+        guard let scene = UIApplication.shared.connectedScenes
+            .compactMap({ $0 as? UIWindowScene }).first(where: { $0.activationState == .foregroundActive }) else { return }
+        scene.requestGeometryUpdate(.iOS(interfaceOrientations: orientations))
     }
 }
 

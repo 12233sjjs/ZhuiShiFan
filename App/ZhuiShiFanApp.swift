@@ -13,6 +13,7 @@ struct ZhuiShiFanApp: App {
 
 struct BrowseView: View {
     @StateObject private var model = BrowseModel()
+    @StateObject private var browserSession = BrowserSession()
     @State private var text = ""
     @State private var query = ""
     @State private var showAccount = false
@@ -74,7 +75,9 @@ struct BrowseView: View {
                 }
             }
             .sheet(isPresented: $showAccount, onDismiss: { Task { await model.load(query) } }) { SiteAccountView() }
-            .sheet(isPresented: $showBrowser) { BrowserView() }
+            .sheet(isPresented: $showBrowser, onDismiss: { browserSession.hide() }) {
+                BrowserView(session: browserSession)
+            }
             .searchable(text: $text, placement: .navigationBarDrawer(displayMode: .always), prompt: "搜索电影、电视剧、动漫")
             .onSubmit(of: .search) { query = text.trimmingCharacters(in: .whitespacesAndNewlines) }
             .onChange(of: text) { if $0.isEmpty { query = "" } }
