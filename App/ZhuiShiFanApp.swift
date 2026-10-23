@@ -2,12 +2,21 @@ import SwiftUI
 
 @main
 struct ZhuiShiFanApp: App {
+    @UIApplicationDelegateAdaptor(PlayerOrientationDelegate.self) private var appDelegate
     var body: some Scene {
         WindowGroup {
             BrowseView()
                 .tint(.mint)
                 .preferredColorScheme(.dark)
         }
+    }
+}
+
+final class PlayerOrientationDelegate: NSObject, UIApplicationDelegate {
+    static var orientations: UIInterfaceOrientationMask = .portrait
+    func application(_ application: UIApplication,
+                     supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        Self.orientations
     }
 }
 

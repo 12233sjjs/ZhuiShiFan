@@ -13,6 +13,8 @@ struct PlaybackSurface: View {
     @State private var speed: Float = 1
     @State private var scrub: Double?
     @State private var muted = false
+    @State private var dragStart: Double?
+    @State private var dragTarget: Double?
 
     var body: some View {
         GeometryReader { geometry in
@@ -22,6 +24,23 @@ struct PlaybackSurface: View {
                     PlayerLayerView(player: player, fill: fill)
                 }
                 Color.clear.contentShape(Rectangle()).onTapGesture { controls.toggle() }
+                    .gesture(DragGesture(minimumDistance: 15)
+                        .onChanged { value in
+                            guard !locked, abs(value.translation.width) > abs(value.translation.height),
+                                  let target = PlaybackSeeking.target(
+                                    start: dragStart ?? player.currentTime().seconds,
+                                    translation: value.translation.width, width: geometry.size.width,
+                                    duration: player.currentItem?.duration.seconds ?? 0) else { return }
+                            if dragStart == nil { dragStart = player.currentTime().seconds }
+                            dragTarget = target
+                        }
+                        .onEnded { _ in
+                            if let dragTarget {
+                                player.seek(to: CMTime(seconds: dragTarget, preferredTimescale: 600))
+                            }
+                            dragStart = nil
+                            dragTarget = nil
+                        })
                 if locked {
                     HStack {
                         control("解锁", "lock.fill") { locked = false; controls = true }
@@ -51,8 +70,8 @@ struct PlaybackSurface: View {
                             let current = valid(player.currentTime().seconds)
                             VStack(spacing: 10) {
                                 HStack {
-                                    Text(clock(scrub ?? current)).monospacedDigit()
-                                    Slider(value: Binding(get: { min(scrub ?? current, max(duration, 1)) },
+                                    Text(clock(dragTarget ?? scrub ?? current)).monospacedDigit()
+                                    Slider(value: Binding(get: { min(dragTarget ?? scrub ?? current, max(duration, 1)) },
                                                           set: { scrub = $0 }),
                                            in: 0...max(duration, 1), onEditingChanged: { editing in
                                         if !editing, let scrub {
@@ -92,6 +111,15 @@ struct PlaybackSurface: View {
                                        startPoint: .top, endPoint: .bottom).allowsHitTesting(false)
                     }
                 }
+                if let dragTarget {
+                    VStack(spacing: 8) {
+                        Text(dragTarget >= (dragStart ?? 0) ? "快进" : "快退")
+                        Text(clock(dragTarget)).font(.title2.monospacedDigit())
+                        Text(String(format: "%+.0f 秒", dragTarget - (dragStart ?? 0)))
+                    }
+                    .padding(20).background(.black.opacity(0.8), in: RoundedRectangle(cornerRadius: 12))
+                    .allowsHitTesting(false)
+                }
             }.foregroundStyle(.white)
         }
         .fullScreenCover(isPresented: $fullscreen) {
@@ -113,21 +141,48 @@ struct PlaybackSurface: View {
     }
 }
 
-struct PlaybackWindow: View {
+enum PlaybackSeeking {
+    static func target(start: Double, translation: Double, width: Double, duration: Double) -> Double? {
+        guard start.isFinite, translation.isFinite, width.isFinite, width > 0,
+              duration.isFinite, duration > 0 else { return nil }
+        // A full-width swipe moves up to two minutes, with finer control for short clips.
+        return min(duration, max(0, start + translation / width * min(duration, 120)))
+    }
+}
+
+struct PlaybackWindow: UIViewControllerRepresentable {
     let player: AVPlayer
     let title: String
     let close: () -> Void
-    var body: some View {
-        PlaybackSurface(player: player, title: title, expanded: true, close: close)
-            .background(Color.black.ignoresSafeArea())
-            .statusBarHidden()
-            .onAppear { rotate(.landscape) }
-            .onDisappear { rotate(.portrait) }
+    func makeUIViewController(context: Context) -> LandscapePlayerController {
+        LandscapePlayerController(rootView: PlaybackSurface(
+            player: player, title: title, expanded: true, close: close))
     }
-    private func rotate(_ orientations: UIInterfaceOrientationMask) {
+    func updateUIViewController(_ controller: LandscapePlayerController, context: Context) {}
+}
+
+final class LandscapePlayerController: UIHostingController<PlaybackSurface> {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { .landscape }
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation { .landscapeRight }
+    override var prefersStatusBarHidden: Bool { true }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        PlayerOrientationDelegate.orientations = .landscape
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setNeedsUpdateOfSupportedInterfaceOrientations()
+        view.window?.windowScene?.requestGeometryUpdate(.iOS(interfaceOrientations: .landscape))
+    }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        PlayerOrientationDelegate.orientations = .portrait
         guard let scene = UIApplication.shared.connectedScenes
             .compactMap({ $0 as? UIWindowScene }).first(where: { $0.activationState == .foregroundActive }) else { return }
-        scene.requestGeometryUpdate(.iOS(interfaceOrientations: orientations))
+        scene.windows.first(where: \.isKeyWindow)?.rootViewController?
+            .setNeedsUpdateOfSupportedInterfaceOrientations()
+        scene.requestGeometryUpdate(.iOS(interfaceOrientations: .portrait))
     }
 }
 
